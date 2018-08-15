@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Тематичне завдання #33</title>
+
+  <link rel="stylesheet" href="assets/bootstrap-3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap-table-1.12.1/bootstrap-table.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h3>Тематичне завдання #33</h3>
+        <hr>
+        <p>Кількість 'landuse' і 'natural' об'єктів по учасникам:</p>
+        <table data-toggle="table" data-url="data/stats_all_tags.json" data-cache="false">
+          <thead>
+            <tr>
+              <th data-field="user" data-formatter="userOsmProfile">OSM профіль</th>
+              <th data-field="count">Кількість об'єктів</th>
+            </tr>
+          </thead>
+        </table>
+        <br>
+        <p>Кількість 'landuse' об'єктів по учасникам:</p>
+        <table data-toggle="table" data-url="data/stats_landuse_tags.json" data-cache="false">
+          <thead>
+            <tr>
+              <th data-field="user" data-formatter="userOsmProfile">OSM профіль</th>
+              <th data-field="count">Кількість об'єктів</th>
+            </tr>
+          </thead>
+        </table>
+        <br>
+        <p>Кількість 'natural' об'єктів по учасникам:</p>
+        <table data-toggle="table" data-url="data/stats_natural_tags.json" data-cache="false">
+          <thead>
+            <tr>
+              <th data-field="user" data-formatter="userOsmProfile">OSM профіль</th>
+              <th data-field="count">Кількість об'єктів</th>
+            </tr>
+          </thead>
+        </table>
+        <br>
+        <p>Статистика 'landuse' об'єктів:</p>
+        <table data-toggle="table" data-url="data/stats_landuse_types_tags.json" data-cache="false">
+          <thead>
+            <tr>
+              <th data-field="tag" data-formatter="landuseUrl">Тег</th>
+              <th data-field="count">Кількість об'єктів</th>
+            </tr>
+          </thead>
+        </table>
+        <br>
+        <p>Статистика 'natural' об'єктів:</p>
+        <table data-toggle="table" data-url="data/stats_natural_types_tags.json" data-cache="false">
+          <thead>
+            <tr>
+              <th data-field="tag" data-formatter="naturalUrl">Тег</th>
+              <th data-field="count">Кількість об'єктів</th>
+            </tr>
+          </thead>
+        </table>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="assets/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="assets/bootstrap-table-1.12.1/bootstrap-table.min.js"></script>
+
+  <script>
+    function userOsmProfile(value, row) {
+      return '<a target="_blank" href="https://www.openstreetmap.org/user/' + value + '">' + value + '</a>';
+    };
+    function landuseUrl(value, row) {
+      return '<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Tag:landuse=' + value + '">' + value + '</a>';
+    };
+    function naturalUrl(value, row) {
+      return '<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Tag:natural=' + value + '">' + value + '</a>';
+    };
+  </script>
+</body>
+
+</html>
