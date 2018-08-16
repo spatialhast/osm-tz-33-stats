@@ -15,7 +15,7 @@
       <div class="col-xs-12 col-md-12">
         <h3>Тематичне завдання #33</h3>
         <hr>
-        <p>Кількість 'landuse' і 'natural' об'єктів по учасникам:</p>
+        <p>Кількість 'landuse', 'natural' і 'leisure' об'єктів по учасникам:</p>
         <table data-toggle="table" data-url="data/stats_all_tags.json" data-cache="false">
           <thead>
             <tr>
@@ -45,6 +45,16 @@
           </thead>
         </table>
         <br>
+        <p>Кількість 'leisure' об'єктів по учасникам:</p>
+        <table data-toggle="table" data-url="data/stats_leisure_tags.json" data-cache="false">
+          <thead>
+            <tr>
+              <th data-field="user" data-formatter="userOsmProfile">OSM профіль</th>
+              <th data-field="count">Кількість об'єктів</th>
+            </tr>
+          </thead>
+        </table>
+        <br>
         <p>Статистика 'landuse' об'єктів:</p>
         <table data-toggle="table" data-url="data/stats_landuse_types_tags.json" data-cache="false">
           <thead>
@@ -64,6 +74,16 @@
             </tr>
           </thead>
         </table>
+        <br>
+        <p>Статистика 'leisure' об'єктів:</p>
+        <table data-toggle="table" data-url="data/stats_leisure_types_tags.json" data-cache="false">
+          <thead>
+            <tr>
+              <th data-field="tag" data-formatter="leisureUrl">Тег</th>
+              <th data-field="count">Кількість об'єктів</th>
+            </tr>
+          </thead>
+        </table>
         <hr>
       </div>
     </div>
@@ -76,11 +96,20 @@
     function userOsmProfile(value, row) {
       return '<a target="_blank" href="https://www.openstreetmap.org/user/' + value + '">' + value + '</a>';
     };
+
     function landuseUrl(value, row) {
-      return '<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Tag:landuse=' + value + '">' + value + '</a>';
+      return '<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Tag:landuse=' + value + '">' + value +
+        '</a>';
     };
+
     function naturalUrl(value, row) {
-      return '<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Tag:natural=' + value + '">' + value + '</a>';
+      return '<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Tag:natural=' + value + '">' + value +
+        '</a>';
+    };
+
+    function leisureUrl(value, row) {
+      return '<a target="_blank" href="https://wiki.openstreetmap.org/wiki/Tag:leisure=' + value + '">' + value +
+        '</a>';
     };
   </script>
 </body>
